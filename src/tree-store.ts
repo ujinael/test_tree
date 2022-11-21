@@ -29,14 +29,5 @@ const parent = this.items.find(i=>i.id === item.parent)
 return [parent!,...this.getAllParents(parent!.id)]
 }
 }
-private getRecursiveParent(item:Item,result:Array<Item>){
-if(item.parent === "root") return
-else{
-const parent = this.items.find(i=>i.id === item.parent)
-if(!parent) return
-result.push(parent)
-this.getRecursiveParent(parent,result)
-}
 
-}
 }
